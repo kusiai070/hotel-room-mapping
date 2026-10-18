@@ -1,0 +1,49 @@
+﻿============================================================================================
+  MEDICION INDEPENDIENTE -- motor tal como esta
+============================================================================================
+  UNKNOWN_CREDIT = 0.0   TH_AUTO = 0.95   MIN_EVIDENCE = 0.15  (leidos del modulo)
+  arnes evaluate_benchmark.py        CE7A0B08DB7523A5
+  arnes diagnostico_benchmark.py     D972557CFBF12C63
+
+============================================================================================
+  RESULTADO  --  2.755.506 pares, 476 hoteles dev
+============================================================================================
+                                           FALSOS MERGE   MATCH PERDIDO   MP/DISTINTOS
+  ------------------------------------------------------------------------------------
+  INCUMBENT (publicado)                           1.22%           4.51%          7.27%
+  Ronda anterior (motor de Anty v1)               2.36%           6.94%          9.42%
+  ------------------------------------------------------------------------------------
+  AHORA (motor + arreglos de lexico)              0.82%           5.21%          7.06%
+
+  Prediccion de Anty esta ronda: 2.29% / 4.45% / 6.05%
+
+  --- variantes de umbral (desde el mismo compare) ---
+  TH_AUTO=0.87 (en vez de 0.95)                   5.37%           4.74%          6.43%
+  MIN_EVIDENCE=0.50 en vez de 0.15                0.02%          25.63%         34.78%
+  MIN_EVIDENCE=0.00                               2.87%           4.28%          5.80%
+
+============================================================================================
+  SOBREAJUSTE -- FULL partido en dos mitades de hoteles
+============================================================================================
+  mitad A (234 hoteles)                              0.52%           5.78%          7.59%
+  mitad B (242 hoteles)                              1.32%           4.41%          6.27%
+
+--- FALSOS MERGES REALES (decide()==AUTO y el gold dice distinto) ---
+  score=1.000 ev=0.35  'grand suite - city view'  vs  'premium suite - city view'
+  score=1.000 ev=0.35  'grand suite - city view'  vs  'premium suite city view'
+  score=1.000 ev=0.35  'grand suite - city view'  vs  'premium, suite, city view'
+  score=1.000 ev=0.35  'grand suite city view'  vs  'premium suite - city view'
+  score=1.000 ev=0.35  'grand suite city view'  vs  'premium suite city view'
+  score=1.000 ev=0.35  'grand suite city view'  vs  'premium, suite, city view'
+  score=1.000 ev=0.35  'grand, suite, city view'  vs  'premium suite - city view'
+  score=1.000 ev=0.35  'grand, suite, city view'  vs  'premium suite city view'
+
+--- MATCHES PERDIDOS REALES (mismo gold, el motor separa) ---
+  [score       ] score=0.942 ev=0.69  '(1)junior king suite with pool view'  vs  '(1)junior suite, 1 king bed, pool view'
+  [score       ] score=0.942 ev=0.69  '(1)junior king suite with pool view'  vs  'junior suite - king size bed - pool view'
+  [score       ] score=0.942 ev=0.69  '(1)junior king suite with pool view'  vs  'junior suite pool view king bed'
+  [score       ] score=0.942 ev=0.69  '(1)junior king suite with pool view'  vs  'junior suite, 1 king bed, pool view'
+  [score       ] score=0.942 ev=0.69  '(1)junior king suite with pool view'  vs  'junior suite, 1 king bed, pool view, 1 king bed'
+  [score       ] score=0.942 ev=0.69  '(1)junior king suite with pool view'  vs  'junior suite, king bed, pool view'
+  [score       ] score=0.942 ev=0.69  '(1)junior suite, 1 king bed, pool view'  vs  'junior king suite (pool view)'
+  [score       ] score=0.942 ev=0.69  '(1)junior suite, 1 king bed, pool view'  vs  'junior king suite with pool view'
